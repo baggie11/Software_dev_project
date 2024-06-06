@@ -1,0 +1,153 @@
+<html>
+    <head>
+        <title>View Mentees Answers</title>
+        <style>
+            .header{
+                background-image: linear-gradient(#D49E8D,#683B2B);
+                text-align: center;
+                padding: 15px;
+                color: white;
+                display: flex;
+
+            }
+            h1{
+                margin-left: 600px;
+            }
+            a{
+                margin-top: 20px;
+            }
+            .select{
+                margin-top: 60px;
+                margin-left: 60px;
+            }
+            input{
+                height: 40px;
+                width: 200px;
+            }
+            .button-17 {
+          margin-top: 50px;
+          align-items: center;
+          appearance: none;
+          background-color: #fff;
+          border-radius: 24px;
+          border-style: none;
+          box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+          box-sizing: border-box;
+          color: #3c4043;
+          cursor: pointer;
+          display: inline-flex;
+          fill: currentcolor;
+          font-family: "Google Sans",Roboto,Arial,sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          height: 48px;
+          justify-content: center;
+          letter-spacing: .25px;
+          line-height: normal;
+          max-width: 100%;
+          overflow: visible;
+          padding: 2px 24px;
+          position: relative;
+          text-align: center;
+          text-transform: none;
+          transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+          width: 200px;
+          will-change: transform,opacity;
+          z-index: 0;
+        }
+
+        .button-17:hover {
+          background: #F6F9FE;
+          color: #174ea6;
+        }
+
+        .button-17:active {
+          box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+          outline: none;
+        }
+
+        .button-17:focus {
+          outline: none;
+          border: 2px solid #4285f4;
+        }
+
+        .button-17:not(:disabled) {
+          box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
+
+        .button-17:not(:disabled):hover {
+          box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+        }
+
+        .button-17:not(:disabled):focus {
+          box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
+
+        .button-17:not(:disabled):active {
+          box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+        }
+
+        .button-17:disabled {
+          box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
+        .two-section{
+            display: flex;
+        }
+        .select{
+            width: 20%;
+        }
+        .result{
+            width: 80%;
+            margin-top: 60px;
+            height: 800px;
+            margin-left: 100px;
+        }
+        #q{
+            background-color: #ffe4da;
+            width: 60%;
+            padding-top: 10px;
+            height: 30px;
+            text-align: center;
+        }
+        #a{
+            background-color: #D49E8D;
+            width: 60%;
+            padding-top: 10px;
+            height: 30px;
+            text-align: center;
+        }
+        </style>
+    </head>
+    <body>
+        <div class = "header">
+            <a href="http://127.0.0.1:8000/mentor/"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16" id = "back" >
+                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+              </svg></a>
+            <h1>View Answers</h1>
+        </div>
+        <div class = "two-section">
+            <div class = "select">
+                <h2>Choose the Mentee!</h2><br>
+                <form action="http://127.0.0.1:8000/ans/">
+                    <input type="text" name = "mentee" placeholder="Enter the Mentee Name">
+                    <br>
+                    <button type = "submit" class = "button-17">Get</button>
+                </form>
+            </div>
+            <div class = "result">
+                {% if result %}
+                <h2>Answers</h2>
+                {% for h,g in resultlist%}
+                <p id = "q">Q) {{h}}</p><br>
+                <p id = "a">Ans) {{g}}</p><br>
+                {%endfor%}
+                {%else%}
+                <h3 style="margin-left: 50px;">The answers will be displayed here!</h3>
+                {%endif%}
+            </div>
+        </div>
+    </body>
+</html>

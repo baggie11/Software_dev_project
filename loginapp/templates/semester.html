@@ -1,0 +1,196 @@
+<html>
+    <head>
+        <title>Semester Grades</title>
+        <style>
+            body{
+                background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+            }
+            h1{
+                margin-top:  38px;
+                margin-left: 600px;
+            }
+            h2{
+                margin-left: 30px;
+                margin-top: 50px;
+            }
+            .marks{
+                font-size: 20px;
+                margin-top: 40px;
+                margin-left: 30px;
+            }
+            details{
+                margin-top: 20px;
+                padding-top: 40px;
+                margin-left: 30px;
+            }
+            .button-17 {
+          margin-top: 10px;
+          margin-left: 50px;
+          align-items: center;
+          appearance: none;
+          background-color: #fff;
+          border-radius: 24px;
+          border-style: none;
+          box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+          box-sizing: border-box;
+          color: #3c4043;
+          cursor: pointer;
+          display: inline-flex;
+          fill: currentcolor;
+          font-family: "Google Sans",Roboto,Arial,sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          height: 48px;
+          justify-content: center;
+          letter-spacing: .25px;
+          line-height: normal;
+          max-width: 100%;
+          overflow: visible;
+          padding: 2px 24px;
+          position: relative;
+          text-align: center;
+          text-transform: none;
+          transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+          width: 200px;
+          will-change: transform,opacity;
+          z-index: 0;
+          grid-area: 20px;
+        }
+
+        .button-17:hover {
+          background: #F6F9FE;
+          color: #174ea6;
+        }
+
+        .button-17:active {
+          box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+          outline: none;
+        }
+
+        .button-17:focus {
+          outline: none;
+          border: 2px solid #4285f4;
+        }
+
+        .button-17:not(:disabled) {
+          box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
+
+        .button-17:not(:disabled):hover {
+          box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+        }
+
+        .button-17:not(:disabled):focus {
+          box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
+
+        .button-17:not(:disabled):active {
+          box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+        }
+
+        .button-17:disabled {
+          box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
+        label{
+            margin-top: 20px;
+        }
+        #dynamic{
+            display: none;
+            border: 2px solid black;
+            width: 50%;
+            background-color: #AD88C6;
+        }
+        #static{
+            display: none;
+        }
+        form{
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        #x{
+            background: transparent;
+            border: none;
+        }
+        </style>
+    </head>
+    <body>
+        <a onclick="handleclick()"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16" id = "back" >
+            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+          </svg></a>
+        <h1>Semester Grading</h1>
+        <h2>{{name}}</h2>
+        <h2>{{dept}}</h2>
+        <div class = "marks">
+            <details>
+                <summary>Semester 1</summary><br><br>
+                <button class = "button-17" id = "edit">Edit</button><br><br>
+                <!--<button class = "button-17" onclick="handlenew()">Add new field</button><br>-->
+                <div class = "static" id = "static">
+                    {% if not content %}
+                        <label for="">Engineering Physics</label><br><br>
+                        <label for="">Engineering Chemistry</label><br><br>
+                        <label for="">Engineering Graphics</label><br><br>
+                        <label for="">Matrices and Calculus</label><br><br>
+                        <label for="">Problem Solving and Programming in Python</label><br><br>
+                        <label for="">Technical English</label>
+                    {% endif %}
+                </div>   
+                <div class = "dynamic" id = "dynamic">
+                    <button id = "x">X</button>
+                    <form action="">
+                        <label for="">Engineering Physics</label> &nbsp;&nbsp;&nbsp; <input type="text" placeholder="Enter grade"><br><br>
+                        <label for="">Engineering Chemistry</label>&nbsp;&nbsp;&nbsp; <input type="text" placeholder="Enter grade"><br><br>
+                        <label for="">Engineering Graphics</label>&nbsp;&nbsp;&nbsp; <input type="text" placeholder="Enter grade"><br><br>
+                        <label for="">Matrices and Calculus</label>&nbsp;&nbsp;&nbsp; <input type="text" placeholder="Enter grade"><br><br>
+                        <label for="">Problem Solving and Programming in Python</label>&nbsp;&nbsp;&nbsp; <input type="text" placeholder="Enter grade"><br><br>
+                        <label for="">Technical English</label>&nbsp;&nbsp;&nbsp; <input type="text" placeholder="Enter grade"><br><br>
+                        <button type = "submit" id = "save">Save</button>
+                    </form>
+                </div>
+            </details>
+            <details>
+                <summary>Semester 2</summary>
+            </details>
+            <details>
+                <summary>Semester 3</summary>
+            </details>
+            <details>
+                <summary>Semester 4</summary>
+            </details>
+            <details>
+                <summary>Semester 5</summary>
+            </details>
+            <details>
+                <summary>Semester 6</summary>
+            </details>
+            <details>
+                <summary>Semester 7</summary>
+            </details>
+            <details>
+                <summary>Semester 8</summary>
+            </details>
+        </div>
+        <script>
+            function handleclick(){
+                const previousURL = document.referrer;
+                location.replace(previousURL);
+            };
+            const edit = document.getElementById("edit");
+            const dynamic = document.getElementById("dynamic");
+            const static = document.getElementById("static");
+            edit.addEventListener("click",function(){
+                dynamic.style.display = "block";
+            });
+
+            const save = document.getElementById("save");
+            save.addEventListener("click",function(){
+                static.style.display = "block";
+                dynamic.style.display = "none";
+            })
+
+        </script>
+    </body>
+</html>

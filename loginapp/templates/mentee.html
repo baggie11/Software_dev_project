@@ -1,0 +1,394 @@
+<html>
+    <head>
+        <title>Mentee Page</title>
+        <style>
+            body{
+                background-image: linear-gradient(to top, #ffe4da 0%, #ffc9b4 100%);
+            }
+            h1{
+                margin-top: 80px;
+                margin-left: 30px;
+                font-size: 50px;
+            }
+            
+            summary{
+                font-size: 30px;
+                margin-left: 50px;
+            }
+            h3{
+                margin-left: 80px;
+                font-size: 25px;
+            }
+            p{
+                margin-left: 20px;
+            }
+            table,td{
+                border: 2px solid black;
+                size: 100px;
+            }
+            td{
+                height: 40px;
+                padding-left: 70px;
+            }
+            table{
+                margin-left: 90px;
+                margin-top: 30px;
+                width: 70%;
+            }
+            .button-17 {
+          margin-top: 50px;
+          margin-left: 30px;
+          align-items: center;
+          appearance: none;
+          background-color: #fff;
+          border-radius: 24px;
+          border-style: none;
+          box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+          box-sizing: border-box;
+          color: #3c4043;
+          cursor: pointer;
+          display: inline-flex;
+          fill: currentcolor;
+          font-family: "Google Sans",Roboto,Arial,sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          height: 48px;
+          justify-content: center;
+          letter-spacing: .25px;
+          line-height: normal;
+          max-width: 100%;
+          overflow: visible;
+          padding: 2px 24px;
+          position: relative;
+          text-align: center;
+          text-transform: none;
+          transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+          width: 200px;
+          will-change: transform,opacity;
+          z-index: 0;
+        }
+
+        .button-17:hover {
+          background: #F6F9FE;
+          color: #174ea6;
+        }
+
+        .button-17:active {
+          box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+          outline: none;
+        }
+
+        .button-17:focus {
+          outline: none;
+          border: 2px solid #4285f4;
+        }
+
+        .button-17:not(:disabled) {
+          box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
+
+        .button-17:not(:disabled):hover {
+          box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+        }
+
+        .button-17:not(:disabled):focus {
+          box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
+
+        .button-17:not(:disabled):active {
+          box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+        }
+
+        .button-17:disabled {
+          box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
+        h3{
+            margin-left: 50px;
+        }
+        .details{
+            width: 70%;
+        }
+        .header{
+            display: flex;
+        }
+
+        #login{
+          background-color: white;
+          visibility: hidden;
+        }
+        #login {
+            position: absolute;
+            
+            background-color: #f1f1f1;
+            min-width: 160px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+          }
+
+          #login a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+          }
+        .profile{
+            margin-left: 700px;
+            width: 50%;
+            height: 150px;
+            margin-top: 80px;
+        }
+        .main{
+            width: 105%;
+        }
+        .details{
+            width: 100%;
+        }
+        #buttonprof{
+            background: transparent;
+            border: none;
+            cursor: pointer;
+          }
+        #meetingres{
+            display: block;
+            width: 25%;
+            margin-left: 550px;
+            z-index: 1;
+            height: 75%;
+            backdrop-filter: hue-rotate(60deg);
+            visibility: hidden;
+            position: relative;
+            border: 2px solid black;
+            margin-top: -500px;
+        }
+        #x{
+            background: transparent;
+            border: none;
+            font-weight: bold;
+            font-size: 20px;
+            cursor: pointer;
+            margin-top: 5px;
+            margin-left: 330px;
+        }
+
+        </style>
+    </head>
+    <body>
+        <div class = content>
+                <div class = "details" id = "first" >
+                    <div class = "header">
+                        <div class = "main">
+                            <h1> Welcome {{personal.name}} &#128075</h1>
+                            <h3>Department : {{personal.dept}}</h3>
+                            <h3>Registeration Number : {{personal.regno}}</h3>
+                        </div>
+                        <div class = "profile">
+                            <button id = "buttonprof" onclick="handleclick()"><svg xmlns="http://www.w3.org/2000/svg" ,width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" id = "profile">
+                              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                            </svg></button>
+                            <div id = "login">
+                                <a>{{personal.name}}</a>
+                                <a href="http://127.0.0.1:8000/">Log out</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    
+                    <details id = "personal">
+                        <summary>Personal</summary>
+                        <table>
+                            <tr>
+                                <td>Name</td>
+                                <td>{{personal.name}}</td>
+                            </tr>
+                            <tr>
+                                <td>Mobile</td>
+                                <td>{{personal.mobile}}</td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>{{personal.email}}</td>
+                            </tr>
+                            <tr>
+                                <td>Address</td>
+                                <td>{{personal.add}}</td>
+                            </tr>
+                            <tr>
+                                <td>Gender</td>
+                                <td>{{personal.g}}</td>
+                            </tr>
+                            <tr>
+                                <td>Blood Group</td>
+                                <td>{{personal.bg}}</td>
+                            </tr>
+                            <tr>
+                                <td>Date of Birth</td>
+                                <td>{{personal.dob}}</td>
+                            </tr>
+                        </table>
+                       
+                    </details>
+                    <details id = father>
+                        <summary>Father</summary>
+                        <table>
+                            <tr>
+                                <td>Name</td>
+                                <td>{{father.na}}</td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>{{father.em}}</td>
+                            </tr>
+                            <tr>
+                                <td>Mobile</td>
+                                <td>{{father.mob}}</td>
+                            </tr>
+                            <tr>
+                                <td>Qualification</td>
+                                <td>{{father.qua}}</td>
+                            </tr>
+                            <tr>
+                                <td>Occupation</td>
+                                <td>{{father.occ}}</td>
+                            </tr>
+                        </table>
+                    </details>
+                    <details id = "mother">
+                        <summary>Mother</summary>
+                        <table>
+                            <tr>
+                                <td>Name</td>
+                                <td>{{mother.name}}</td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>{{mother.email}}</td>
+                            </tr>
+                            <tr>
+                                <td>Qualification</td>
+                                <td>{{mother.qua}}</td>
+                            </tr>
+                            <tr>
+                                <td>Occupation</td>
+                                <td>{{mother.occ}}</td>
+                            </tr>
+                        </table>
+                    </details>
+                    <details id = "academic">
+                        <summary>Academic</summary>
+                        <table>
+                            <tr>
+                                <td>12th Percentage</td>
+                                <td>{{academic.high_s}}</td>
+                            </tr>
+                            <tr>
+                                <td>10th Percentage</td>
+                                <td>{{academic.sec_s}}</td>
+                            </tr>
+                        </table>
+                    </details>
+                </div>
+                <!--<div class = "mentormeeting">
+                  <h3>Meetings Scheduled for your mentor</h3>
+                    {% if mentor_meeting %}
+                       {% for i in mentor_meeting %}
+                         {% for j in i %}
+                            <p style="margin-left: 50px;">{{j}}</p>
+                         {%endfor%}
+                        {%endfor%}
+                    {%endif%}
+                </div>
+            </div>-->
+            
+            <br>
+            <br>
+            <div class = "option" id = "option">
+                <button class = "button-17" id = "request">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
+                        <path d="M16 8c0 3.866-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7M5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0m4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                    </svg>
+                    <p>Request Meeting</p>
+                </button>
+                <form action="http://127.0.0.1:8000/answer/">
+                    <button class = "button-17">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
+                            <path d="M16 8c0 3.866-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7M5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0m4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                        </svg>
+                        <p>Answer Questions</p>
+                    </button>
+                </form>
+                
+
+        </div>
+        <div id = "meetingres">
+            <button id = "x">X</button>
+            <h3 style="margin-left: 65px;">Request a Meeting</h3>
+            <br>
+            <form action="http://127.0.0.1:8000/mentee/" method = "POST">
+                {% csrf_token %}
+                <label for="" style="margin-left: 65px;font-size: 20px;">Subject</label>
+                <br>
+                <textarea name="subject" id="content" rows = 10 cols = 30 style="margin-left:60px;margin-top: 8px;"></textarea>
+                <br>
+                <br>
+                <label for="" style="margin-left: 65px;font-size: 20px;">Date</label>
+                <br>
+                <input name = "date" id = "date" type="date" style="margin-left:60px;margin-top: 8px;">
+                <br>
+                <br>
+                <label for="" style="margin-left: 65px;font-size: 20px;">Starting time</label>
+                <br>
+                <input name = "time" type="time"  id = "time" style="margin-left:60px;margin-top: 8px;">
+                <br>
+                <button class = "button-17" style="margin-left:60px;" id = "rc">Request</button>
+            </form>
+        </div>
+        <script>
+            function handleclick(){
+          var menu = document.getElementById("login");
+          if (menu.style.visibility == "hidden"){
+            menu.style.visibility = "visible";
+          }
+          else{
+            menu.style.visibility = "hidden";
+          }
+        }
+        var getin = document.getElementById("getint");
+        var meetingres = document.getElementById("meetingres")
+        var x = document.getElementById("x");
+        var request = document.getElementById("request");
+        var option = document.getElementById("option");
+        var detail = document.getElementById("first");
+        request.addEventListener("click",function(){
+            if (meetingres.style.visibility === "visible"){
+                meetingres.style.visibility = "hidden";
+            }
+            else{
+                meetingres.style.visibility = "visible";
+                option.style = "filter: blur(8px);-webkit-filter: blur(8px);";
+                detail.style = " filter: blur(8px);-webkit-filter: blur(8px);";
+
+            
+            }
+        })
+
+        x.addEventListener("click",function(){
+            meetingres.style.visibility = "hidden";
+            option.style = "filter: blur(0px);-webkit-filter: blur(0px);";
+            detail.style = " filter: blur(0px);-webkit-filter: blur(0px);";
+        })
+        var rc = document.getElementById("rc")
+        rc.addEventListener("click",function(){
+                alert("An email is sent to the mentor regarding your request.The mentor's response will be intimated to you via email")
+            
+        })
+
+       
+        </script>
+    </body>
+</html>

@@ -1,0 +1,282 @@
+<html>
+    <head>
+        <title>Marks</title>
+        <script src=
+        "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+            </script>
+        <style>
+            body{
+                background-image: linear-gradient(to top, #ffe4da 0%, #ffc9b4,#ffe4da 100%);
+               
+                    /* Center and scale the image nicely */
+                    height: 100vh;
+            }
+            .header{
+                margin-top: 50px;
+                margin-left: 50px;
+            }
+            select{
+                width: 150px;
+                height: 30px;
+            }
+            form{
+                margin-top: 50px;
+                margin-left: 50px;
+            }
+            .category{
+                display: flex;
+            }
+            #choose{
+                margin-top: 60px;
+            }
+            #ooo{
+                width: 300px;
+                margin-left: 50px;
+            }
+            .category1{
+                margin-left:-50px;
+                width: 30%;
+            }
+            .category3{
+                margin-top: -50px;
+            }
+            .button-17 {
+          margin-left: 30px;
+          align-items: center;
+          appearance: none;
+          background-color: #fff;
+          border-radius: 24px;
+          border-style: none;
+          box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+          box-sizing: border-box;
+          color: #3c4043;
+          cursor: pointer;
+          display: inline-flex;
+          fill: currentcolor;
+          font-family: "Google Sans",Roboto,Arial,sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          height: 48px;
+          justify-content: center;
+          letter-spacing: .25px;
+          line-height: normal;
+          max-width: 100%;
+          overflow: visible;
+          padding: 2px 24px;
+          position: relative;
+          text-align: center;
+          text-transform: none;
+          transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+          width: 200px;
+          will-change: transform,opacity;
+          z-index: 0;
+        }
+
+        .button-17:hover {
+          background: #F6F9FE;
+          color: #174ea6;
+        }
+
+        .button-17:active {
+          box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+          outline: none;
+        }
+
+        .button-17:focus {
+          outline: none;
+          border: 2px solid #4285f4;
+        }
+
+        .button-17:not(:disabled) {
+          box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
+
+        .button-17:not(:disabled):hover {
+          box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+        }
+
+        .button-17:not(:disabled):focus {
+          box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
+
+        .button-17:not(:disabled):active {
+          box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+        }
+
+        .button-17:disabled {
+          box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
+        table, th, td {
+            border: 1px solid black;
+            gap: 30px;
+        }
+        table{
+            width: 90%;
+            margin-left: 50px;
+            border: none;
+        }
+        th,td{
+            padding: 10px;
+            text-align: center;
+        }
+        .enter{
+            margin-left: -300px;
+            background-color: #e5a692;
+            visibility: hidden;
+            height: 200px;
+            width: 700px;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        input{
+            width: 200px;
+            margin-top: 20px;
+            height: 30px;
+            margin-left: 30px;
+        }
+        #save{
+            margin-top: 30px;
+        }
+        #viewm{
+            margin-top: 50px;
+        }
+        .viewmarks{
+            margin-top: -220px;
+            width: 50%;
+            margin-left: 350px;
+            visibility: visible;
+        }
+        .viewmarks p{
+            margin-left: 300px;
+        }
+        h3{
+            margin-top: -20px;
+        }
+        </style>
+    </head>
+    <body>
+        <a href="http://127.0.0.1:8000/detail/">Go Back!</a>
+        <div class = "header">
+            <h1>{{name}}</h1>
+            <h1>B.Tech. Information Technology</h1>
+        </div>
+        <br><br><br><br>
+        <h3 style="margin-left: 50px;">Courses opted by the individual</h3>
+        <table>
+            <thead>
+                <tr>
+                    {% for header in subject.0 %}
+                        <th>{{ header }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in subject|slice:"1:" %}
+                    <tr>
+                        {% for item in row %}
+                            <td>{{ item }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br><br><br>
+        <div class = "category">
+            
+            <h2 id = "ooo">Choose the semester</h2><br><br>
+            <div class = category1>
+                <form  id = "choose" method = "POST" action = "http://127.0.0.1:8000/enter/">
+                    {% csrf_token %}
+                    <select name="semester" id="semester" ng-model = "semester1">
+                        <option value = "">Semester</option>
+                        <option value="1">Semester 1</option>
+                        <option value="2">Semester 2</option>
+                        <option value="3">Semester 3</option>
+                        <option value="4">Semester 4</option>
+                        <option value="5">Semester 5</option>
+                        <option value="6">Semester 6</option>
+                        <option value="7">Semester 7</option>
+                        <option value="8">Semester 8</option>
+        
+                    </select>
+                    <div class = "enter" id = "enter1">
+                        <br>
+                        <h3>Enter the marks(if marks doesn't exist - enter 0)</h3>
+                            <input type="text" name = "1" placeholder="Enter the marks for course 1">
+                            <input type="text" name = "2" placeholder="Enter the marks for course 2">
+                            <input type="text" name = "3" placeholder="Enter the marks for course 3">
+                            <input type="text" name = "4" placeholder="Enter the marks for course 4">
+                            <input type="text" name = "5" placeholder="Enter the marks for course 5">
+                            <input type="text" name = "6" placeholder="Enter the marks for course 6">
+                            <input type="text" name = "7" placeholder="Enter the marks for course 7">
+                            <input type="text" name = "8" placeholder="Enter the marks for course 8">
+                            <input type="text" name = "cgpa" placeholder="Enter the cgpa"><br>
+                            <button type = "submit" class = "button-17" id = "save">Save</button>
+                    </div>
+           
+                </form>
+            </div>
+            <div class = "category2">
+                <button class = "button-17" id = "entersection" style="margin-top: 50px;">Enter Marks</button>
+            </div>
+            <div class = "category3">
+                <form action="http://127.0.0.1:8000/viewmarks/" method = "GET">
+                    <input type="text" name = "values" style="visibility: hidden;" id = inp>
+                    <button class = "button-17" type = "submit" id = "viewm" >View Marks</button>
+                </form>
+            </div>
+           
+        </div>
+       
+        <br><br>
+       <div class = "viewmarks" id = "viewmarks">
+        
+        {% if result %}
+            <p>Semester {{semester}}</p>
+            <ul>
+                {% for key, value in result.items %}
+                <li><strong>{{ key }}:</strong> {{ value }}</li><br>
+                {% endfor %}
+            </ul>
+        {%else%}
+        Marks are displayed here
+        {%endif%}
+        
+       </div>
+        <script>
+            var var1 = document.getElementById("entersection");
+            var section = document.getElementById("enter1");
+            var section2 = document.getElementById("viewmarks")
+            var1.addEventListener("click",function(){
+                if (section.style.visibility === "visible"){
+                    section.style.visibility = "hidden";
+                    section2.style.visibility = "visible";
+
+                }else{
+                    section.style.visibility = "visible";
+                    section2.style.visibility = "hidden";
+                }
+            })
+            const value = document.getElementById("semester");
+            const change1 = document.getElementById("inp");
+            value.addEventListener("change",function(){
+                change1.value = value.value;
+            })
+
+           /* var var2 = document.getElementById("viewm");
+            var section2 = document.getElementById("viewmarks");
+            var2.addEventListener("click",function(){
+                if (section2.style.visibility === "visible"){
+                    section2.style.visibility = "hidden";
+                }else{
+                    section2.style.visibility = "visible";
+                }
+            })*/
+
+        </script>
+       
+    </body>
+</html>

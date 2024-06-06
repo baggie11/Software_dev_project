@@ -1,0 +1,283 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .header{
+                background-image: linear-gradient(#D49E8D,#683B2B);
+                text-align: center;
+                padding: 15px;
+                color: white;
+            }
+            .menteelogin{
+                display: flex;
+            }
+            .mentorlogin{
+                display: flex;
+                margin-top: 50px;
+            }
+            .managerlogin{
+                display: flex;
+                margin-top: 50px;
+            }
+            .mainlogin{
+                margin-top: 250px;
+                margin-left: 500px;
+            }
+            .button-17 {
+          margin-top: -30px;
+          margin-left: 70px;
+          align-items: center;
+          appearance: none;
+          background-color: #fff;
+          border-radius: 24px;
+          border-style: none;
+          box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+          box-sizing: border-box;
+          color: #3c4043;
+          cursor: pointer;
+          display: inline-flex;
+          fill: currentcolor;
+          font-family: "Google Sans",Roboto,Arial,sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          height: 48px;
+          justify-content: center;
+          letter-spacing: .25px;
+          line-height: normal;
+          max-width: 100%;
+          overflow: visible;
+          padding: 2px 24px;
+          position: relative;
+          text-align: center;
+          text-transform: none;
+          transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+          width: 250px;
+          will-change: transform,opacity;
+          z-index: 0;
+        }
+
+        .button-17:hover {
+          background: #F6F9FE;
+          color: #174ea6;
+        }
+
+        .button-17:active {
+          box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+          outline: none;
+        }
+
+        .button-17:focus {
+          outline: none;
+          border: 2px solid #4285f4;
+        }
+
+        .button-17:not(:disabled) {
+          box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
+
+        .button-17:not(:disabled):hover {
+          box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+        }
+
+        .button-17:not(:disabled):focus {
+          box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
+
+        .button-17:not(:disabled):active {
+          box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+        }
+
+        .button-17:disabled {
+          box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
+        svg{
+            margin-top: -15px;
+            margin-left: 40px;
+        }
+        .main{
+          background-image: url("backend\loginapp\static\ssnhome.png");
+        }
+        .login-box{
+            /*background-image: linear-gradient(to bottom right,#97E7E1,#6AD4DD,#7AA2E3);*/
+            background-image: linear-gradient(to bottom right,#DED1BD,#D49E8D);
+            width: 30%;
+            height: 400px;
+            margin-left: 530px;
+            margin-top: 140px;
+            border-radius: 25px;
+        }
+        .email{
+          margin-left: 20px;
+          display: flex;
+          gap: 20px;
+          margin-top: 20px;
+        }
+        #email{
+          margin-top: 3px;
+        }
+        #pass{
+          margin-left: 50px;
+          margin-top: -3px;
+        }
+        input{
+          height: 100px;
+        }
+        .password{
+          display: flex;
+          gap: 15px;
+        }
+        body{
+          background-color: #F6F9FE;
+        }
+        .button-17 {
+          margin-top: -30px;
+          margin-left: 160px;
+          align-items: center;
+          appearance: none;
+          background-color: #fff;
+          border-radius: 24px;
+          border-style: none;
+          box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+          box-sizing: border-box;
+          color: #3c4043;
+          cursor: pointer;
+          display: inline-flex;
+          fill: currentcolor;
+          font-family: "Google Sans",Roboto,Arial,sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          height: 48px;
+          justify-content: center;
+          letter-spacing: .25px;
+          line-height: normal;
+          max-width: 100%;
+          overflow: visible;
+          padding: 2px 24px;
+          position: relative;
+          text-align: center;
+          text-transform: none;
+          transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+          width: auto;
+          will-change: transform,opacity;
+          z-index: 0;
+        }
+
+        .button-17:hover {
+          background: #F6F9FE;
+          color: #174ea6;
+        }
+
+        .button-17:active {
+          box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+          outline: none;
+        }
+
+        .button-17:focus {
+          outline: none;
+          border: 2px solid #4285f4;
+        }
+
+        .button-17:not(:disabled) {
+          box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
+
+        .button-17:not(:disabled):hover {
+          box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+        }
+
+        .button-17:not(:disabled):focus {
+          box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
+
+        .button-17:not(:disabled):active {
+          box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+        }
+
+        .button-17:disabled {
+          box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
+        .error p{
+          color: red;
+          margin-left: 120px;
+          margin-top: 20px;
+          visibility: hidden;
+        }
+        #temp{
+          visibility: hidden;
+        }
+        a{
+          margin-left: 60px;
+        }
+/* CSS */
+
+
+            
+        </style>
+    </head>
+    <body>
+        <div class = "main">
+          <img src="E:\ProjectDemo\backend\loginapp\static\ssnhome.png" alt="">
+            <div class = "header">
+            <h1>Welcome to our Mentorship System</h1>
+            </div>
+          <div class = content>
+             <!-- <div class = "mainlogin">
+                  <div class = "menteelogin">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                          <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                        </svg>
+                      <form action="http://127.0.0.1:8000/login/" method = "GET">
+                          <button class="button-17" type = "submit">Mentee Login</button>
+                      </form>
+                  </div>--->
+
+                  <div class = "main">
+                    <div class="login-box">
+                      <form action='http://127.0.0.1:8000/login/' method='post' autocomplete="off">
+                        {% csrf_token %}
+                            <br><br>
+                            <br><br><br>
+                            <div class = "email">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16" id = "email">
+                                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
+                              </svg>
+                              <input type="email" style="font-size: 10pt; height: 30px; width:280px;" size=25 width=500px name='email' placeholder="Enter your email"/>
+                            </div>
+                              <br>
+                              <br>
+                              <div class = "password">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 72 72" id = "pass">
+                                  <path d="M 36 10 C 28.28 10 22 16.28 22 24 L 22 28.587891 C 19.069798 29.775473 17 32.643974 17 36 L 17 52 C 17 56.418 20.582 60 25 60 L 47 60 C 51.418 60 55 56.418 55 52 L 55 36 C 55 32.643974 52.930202 29.775473 50 28.587891 L 50 24 C 50 16.28 43.72 10 36 10 z M 36 18 C 39.309 18 42 20.691 42 24 L 42 28 L 30 28 L 30 24 C 30 20.691 32.691 18 36 18 z M 27 41 C 28.657 41 30 42.343 30 44 C 30 45.657 28.657 47 27 47 C 25.343 47 24 45.657 24 44 C 24 42.343 25.343 41 27 41 z M 36 41 C 37.657 41 39 42.343 39 44 C 39 45.657 37.657 47 36 47 C 34.343 47 33 45.657 33 44 C 33 42.343 34.343 41 36 41 z M 45 41 C 46.657 41 48 42.343 48 44 C 48 45.657 46.657 47 45 47 C 43.343 47 42 45.657 42 44 C 42 42.343 43.343 41 45 41 z"></path>
+                                  </svg>
+                                <input  type="password" style="font-size: 10pt; height: 30px; width:280px;"size=50 name='password' placeholder="Enter your password" />
+                              </div>
+                              
+                              <br>
+                              <br>
+                              <br>
+                              &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp  &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input  class="button-17" type='submit' value='Log in'>
+                      </form>
+                      <a href="http://127.0.0.1:8000/forgot/">Forgot Password?</a>
+                      <div class = "error" id = "error">
+                        <p id = "errorp">Incorrect email or password</p>
+                      </div>
+                      <div id = "temp">{{value}}</div>
+                      <br>
+                      <br>
+                    </div>
+              
+          </div>
+       
+        </div>
+        
+
+    </body>
+</html>

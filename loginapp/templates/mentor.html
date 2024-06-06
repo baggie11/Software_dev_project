@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mentor Page</title>
+    <style>
+      body{
+       background-color: #683B2B;
+       /*background-image: linear-gradient(to right, #9796f0, #fbc7d4);*/
+      }
+      h1{
+        margin-left: 30px;
+        margin-top: 30px;
+        color: white;
+      }
+  
+
+      .button-17 {
+          margin-top: 50px;
+          margin-left: 30px;
+          align-items: center;
+          appearance: none;
+          background-color: #fff;
+          border-radius: 24px;
+          border-style: none;
+          box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+          box-sizing: border-box;
+          color: #3c4043;
+          cursor: pointer;
+          display: inline-flex;
+          fill: currentcolor;
+          font-family: "Google Sans",Roboto,Arial,sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          height: 48px;
+          justify-content: center;
+          letter-spacing: .25px;
+          line-height: normal;
+          max-width: 100%;
+          overflow: visible;
+          padding: 2px 24px;
+          position: relative;
+          text-align: center;
+          text-transform: none;
+          transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+          width: 200px;
+          will-change: transform,opacity;
+          z-index: 0;
+          grid-area: 20px;
+        }
+
+        .button-17:hover {
+          background: #F6F9FE;
+          color: #174ea6;
+        }
+
+        .button-17:active {
+          box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+          outline: none;
+        }
+
+        .button-17:focus {
+          outline: none;
+          border: 2px solid #4285f4;
+        }
+
+        .button-17:not(:disabled) {
+          box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
+
+        .button-17:not(:disabled):hover {
+          box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+        }
+
+        .button-17:not(:disabled):focus {
+          box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
+
+        .button-17:not(:disabled):active {
+          box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+        }
+
+        .button-17:disabled {
+          box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
+        #add , #delete{
+          width: 250px;
+        }
+
+        .content{
+          display: flex;
+          margin-top: 30px;
+        }
+        .main{
+          width: 70%;
+        }
+        .center{
+          width: 60%;
+          margin-left: 500px;
+          margin-top: 100px;
+          margin: 2px solid white;
+        }
+        #section{
+          visibility: hidden;
+          background-color: aliceblue;
+          margin-top: 50px;
+          width: 80%;
+        }
+        #input{
+          margin-top: 50px;
+          margin-left: 80px;
+          height: 30px;
+        }
+        #btn{
+          width: 100px;
+          margin-left: 120px;
+        }
+        hr{
+          width: 85%;
+        }
+        h2{
+          margin-top: 30px;
+          margin-left: 100px;
+          font-size: 30px;
+        }
+        h1{
+          font-size: 40px;
+        }
+        li{
+          margin-left: 100px;
+        }
+        #get{
+          margin-left: 110px;
+        }
+        #getin{
+          height: 30px;
+        }
+        #getbut{
+          height: 30px;
+        }
+        h3{
+          color: white;
+          margin-left: 90px;
+        }
+        .heading{
+          display: flex;
+        }
+        .welcome{
+          width: 85%;
+        }
+        .profile{
+          margin-top: 50px;
+        }
+        #menu{
+          background-color: white;
+        }
+        #menu {
+            position: absolute;
+            visibility:  hidden;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+          }
+
+          #menu a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+          }
+
+          #buttonprof{
+            background: transparent;
+            border: none;
+            cursor: pointer;
+          }
+          .meetings{
+            background-color: white;
+            width: 25%;
+            margin-left: 40px;
+            height: 200px;
+          }
+          .post{
+            margin-top: -300px;
+            margin-left: 70px;
+            display: flex;
+          }
+    </style>
+  </head>
+  <body>
+    <div class = "heading">
+      <div class = "welcome">
+        <h1>Hello Karthika &#x1F44B;</h1>
+      </div>
+      <div class = "profile">
+        <button id = "buttonprof" onclick="handleclick()"><svg xmlns="http://www.w3.org/2000/svg" style = "color:white",width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" id = "profile">
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+          <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+        </svg></button>
+        <div id="menu">
+          <a>Karthika</a>
+          <a href="http://127.0.0.1:8000/">Log out</a>
+        </div>
+      </div>
+    </div>
+    
+    <br>
+    <hr>
+    <div class = "content">
+
+    
+      <div class = "main">
+        <h2 style="color: white;">Your Mentees!</h2>
+        <div class = "component">
+          {% for i in dict.values %}
+          <ul>
+            <li style="color: white;">{{i.name}}</li>
+          </ul>
+          {%endfor%}
+          <br>
+          
+        </div>
+        <h3>Enter the student name to see their details</h3>
+        <form action="http://127.0.0.1:8000/detail/" method = "POST" id = "get">
+          {% csrf_token %}
+          <input type="text" name = sname placeholder="Enter the name" id = "getin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="submit" id = "getbut">Search</button>
+        </form>
+      </div>
+    
+      <div class = "center">
+        <div class = "add">
+          <form action="http://127.0.0.1:8000/add/" method = "GET">
+            <button class = "button-17" id = "add">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+              </svg>
+              <p>&nbsp; &nbsp; &nbsp;Add Mentee Details</p></button>
+          </form>
+        </div>
+        <div class = "delete">
+            <button class = "button-17" id = "delete" onclick="deletefunction()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+              </svg>
+              <p>&nbsp; &nbsp; &nbsp;Delete Mentee</p></button>
+              <div id = "section">
+                <form action="http://127.0.0.1:8000/delete/" method = "POST">
+                  {% csrf_token %}
+                  <input type="text" placeholder="Enter the student name" id = "input" name = student>
+                  <br>
+                  <button type = "submit" class = "button-17" id = "btn">Enter</button>
+                  <p id = "success" style="visibility: hidden;">Successfully deleted!</p>
+                </form>
+              </div>
+
+        </div>
+      </div>
+      
+    </div>
+    <div class = "post">
+      <form action="http://127.0.0.1:8000/postquestion/">
+        <button class = "button-17">
+            <p>Post Questions</p>
+        </button>
+    </form>
+    <form action="http://127.0.0.1:8000/viewans/" method = "GET">
+      <button class = "button-17">
+          <p>View answers</p>
+      </button>
+  </form>
+    </div>
+    
+    <!--<div id="root"></div>-->
+    <script>
+        function deletefunction(){
+
+          var section = document.getElementById("section");
+          if (section.style.visibility === "visible"){
+            section.style.visibility = "hidden";
+          }
+          else{
+            section.style.visibility = "visible";
+          }
+          
+        }
+        var data = JSON.parse("{{resultjs|escapejs}}");
+        var success = document.getElementById("success");
+        if (data){
+          alert("Successfully deleted")
+          window.location.href = "http://127.0.0.1:8000/mentor/"; 
+
+        }        
+
+        
+        function handleclick(){
+          var menu = document.getElementById("menu");
+          if (menu.style.visibility == "hidden"){
+            menu.style.visibility = "visible";
+          }
+          else{
+            menu.style.visibility = "hidden";
+          }
+        }
+        var getin = document.getElementById("getint");
+    </script>
+  </body>
+</html>
